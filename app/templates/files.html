@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+
+
+<link rel = "stylesheet" type = "text/css" href = "{{url_for('static',filename='css/Flexbox.css')}}">
+
+
+{%endblock%}
+
+
+
+
+{% block main %}
+<!-- hello -->
+<p> 
+<ul> 
+    <div class = "box">
+    {% for file in filenames %}
+	<!--{% if file is defined %} true {% endif %} -->
+	<!--<li> {{file}} </li> -->
+	<div>
+ 	<li> <img src = "{{ url_for('static',filename = 'uploads/' + file )}}"> </li> 
+	</div>
+     {% endfor %} 
+    </div>
+</ul>
+</p>
+
+{%endblock%}
